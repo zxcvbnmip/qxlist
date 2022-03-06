@@ -36,3 +36,6 @@ DOMAIN-SUFFIX,dmc.nico
 DOMAIN-SUFFIX,nicovideo.jp
 DOMAIN-SUFFIX,nimg.jp
 DOMAIN-SUFFIX,socdm.com
+
+# > komiflo
+DOMAIN-SUFFIX,komiflo.com
