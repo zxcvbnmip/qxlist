@@ -16,16 +16,11 @@ DOMAIN-SUFFIX,happyon.jp
 DOMAIN-SUFFIX,hjholdings.jp
 DOMAIN-SUFFIX,hulu.jp
 
-# > niconico
-USER-AGENT,Niconico*
-DOMAIN-SUFFIX,dmc.nico
-DOMAIN-SUFFIX,nicovideo.jp
-DOMAIN-SUFFIX,nimg.jp
-
 # > TVer
 USER-AGENT,TVer-Release*
 DOMAIN-SUFFIX,tver.jp
 DOMAIN,edge.api.brightcove.com
+
 # > Dlsite
 DOMAIN-SUFFIX,dlsite.com
 DOMAIN-SUFFIX,dlsite.jp
