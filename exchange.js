@@ -12,16 +12,17 @@ const digits = 2; // 保留几位有效数字
 
 const $ = API("exchange");
 const currencyNames = {
-    cny: ["人民币", "🇨🇳"],
-    usd: ["美元", "🇺🇸"],
-    hkd: ["港币", "🇭🇰"],
-    jpy: ["日元", "🇯🇵"],
-    eur: ["欧元", "🇪🇺"],
-    gbp: ["英镑", "🇬🇧"],
+    CNY: ["人民币", "🇨🇳"],
+    USD: ["美元", "🇺🇸"],
+    HKD: ["港币", "🇭🇰"],
+    JPY: ["日元", "🇯🇵"],
+    EUR: ["欧元", "🇪🇺"],
+    GBP: ["英镑", "🇬🇧"],
+    RUB: ["卢布", "🇷🇺"],
 };
 
 
-$.http.get({url: "https://api.ratesapi.io/api/latest?base=CNY"})
+$.http.get({url: "http://api.exchangeratesapi.io/v1/latest? access_key = YOUR_ACCESS_KEY& base = CNY"})
     .then((response) => {
         const data = JSON.parse(response.body);
         const source = currencyNames[base];
