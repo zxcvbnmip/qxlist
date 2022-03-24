@@ -331,3 +331,5 @@ DOMAIN,yt3.ggpht.com
 DOMAIN-SUFFIX,hanime1.me
 # > hanime.tv
 DOMAIN-SUFFIX,hanime.tv
+# > emby
+DOMAIN-KEYWORD,emby
