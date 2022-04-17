@@ -140,8 +140,8 @@ if (magicJS.read(blackKey)) {
             //2022-02-16 add by ddgksf2013
             for (let ii = 0; ii < obj["data"]["sections_v2"].length; ii++) {
               if(obj.data.sections_v2[ii].title=='推荐服务'||obj.data.sections_v2[ii].title=='推薦服務'){
-                obj.data.sections_v2[ii].items[0].title='\u516C\u773E\u865F';
-                obj.data.sections_v2[ii].items[1].title='\u58A8\u9B5A\u624B\u8A18';
+                obj.data.sections_v2[ii].items[0].title='\u545c\u545c\u545c\u51ac\u5b50';
+                obj.data.sections_v2[ii].items[1].title='\u4f60\u5e26\u6211\u8d70\u5427';
               }
               if(obj.data.sections_v2[ii].title=='更多服務'||obj.data.sections_v2[ii].title=='更多服务'){
                   if(obj.data.sections_v2[ii].items[0].id==500){
