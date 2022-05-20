@@ -242,6 +242,7 @@ DOMAIN-KEYWORD,.blogspot.
 DOMAIN-SUFFIX,goog
 # > Apple
 DOMAIN,testflight.apple.com
+DOMAIN-SUFFIX,gsa.apple.com
 # > Automattic
 DOMAIN-SUFFIX,gravatar.com
 DOMAIN-SUFFIX,tumblr.com
