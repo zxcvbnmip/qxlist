@@ -1,3 +1,4 @@
+# > steam
 DOMAIN-SUFFIX,steampowered.com,direct
 DOMAIN-SUFFIX,steam-chat.com,direct
 DOMAIN-SUFFIX,steamgames.com,direct
@@ -6,3 +7,5 @@ DOMAIN-SUFFIX,steamcontent.com,direct
 DOMAIN-SUFFIX,steamstatic.com,direct
 DOMAIN-SUFFIX,steamcdn-a.akamaihd.net,direct
 DOMAIN-SUFFIX,steamstat.us,direct
+# > epic
+DOMAIN-SUFFIX,epicgames.com
