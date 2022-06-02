@@ -1,5 +1,5 @@
-HOST-SUFFIX,e-hentai.org
-HOST-SUFFIX,exhentai.org
+DOMAIN-SUFFIX,e-hentai.org
+DOMAIN-SUFFIX,exhentai.org
 IP-CIDR,104.20.134.21/32,no-resolve
 IP-CIDR,104.20.135.21/32,no-resolve
 IP-CIDR,172.67.0.127/32,no-resolve
