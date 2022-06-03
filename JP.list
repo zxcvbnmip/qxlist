@@ -24,7 +24,7 @@ DOMAIN,edge.api.brightcove.com
 # > Dlsite
 DOMAIN-SUFFIX,dlsite.com
 DOMAIN-SUFFIX,dlsite.jp
-
+DOMAIN-SUFFIX,chobit.cc
 # > niconico
 USER-AGENT,Niconico*
 DOMAIN-SUFFIX,dmc.nico
