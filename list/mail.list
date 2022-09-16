@@ -1,0 +1,9 @@
+DOMAIN,imap-mail.outlook.com,Mail
+DOMAIN,imap.gmail.com,Mail
+DOMAIN,outlook.office365.com,Mail
+DOMAIN,pop.gmail.com,Mail
+DOMAIN,smtp-mail.outlook.com,Mail
+DOMAIN,smtp.gmail.com,Mail
+DOMAIN,smtp.office365.com,Mail
+DOMAIN-SUFFIX,apple.imap.mail.yahoo.com,Mail
+DOMAIN-SUFFIX,m.hotmail.com,Mail
