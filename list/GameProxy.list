@@ -1,4 +1,9 @@
+# > steam
 DOMAIN,store.steampowered.com
 DOMAIN,api.steampowered.com
 DOMAIN-SUFFIX,steamcommunity.com
 DOMAIN,cdn.akamai.steamstatic.com
+# > gg云模块
+DOMAIN-SUFFIX,rlyun.top
+DOMAIN-SUFFIX,cdnrlyun.top
+IP-CIDR,8.216.44.30/32
