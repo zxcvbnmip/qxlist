@@ -8,4 +8,3 @@ IP-CIDR, 224.0.0.0/4, direct
 IP6-CIDR, fe80::/10, direct
 IP-CIDR, 203.107.1.1/24, reject
 GEOIP, cn, direct
-final, 黑白名单
