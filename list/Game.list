@@ -1,12 +1,12 @@
 # > steam
-DOMAIN,store.steampowered.com,game
-DOMAIN,api.steampowered.com,game
-DOMAIN-SUFFIX,steamcommunity.com,game
-DOMAIN,cdn.akamai.steamstatic.com,game
+DOMAIN,store.steampowered.com,Game
+DOMAIN,api.steampowered.com,Game
+DOMAIN-SUFFIX,steamcommunity.com,Game
+DOMAIN,cdn.akamai.steamstatic.com,Game
 # > gg云模块
-DOMAIN-SUFFIX,rlyun.top,game
-DOMAIN-SUFFIX,cdnrlyun.top,game
-IP-CIDR,8.216.44.30/32,game
+DOMAIN-SUFFIX,rlyun.top,Game
+DOMAIN-SUFFIX,cdnrlyun.top,Game
+IP-CIDR,8.216.44.30/32,Game 
 
 # > steam
 DOMAIN-SUFFIX,steampowered.com,direct
