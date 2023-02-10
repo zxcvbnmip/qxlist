@@ -1,0 +1,10 @@
+DOMAIN-SUFFIX, local, direct
+IP-CIDR, 192.168.0.0/16, direct
+IP-CIDR, 10.0.0.0/8, direct
+IP-CIDR, 172.16.0.0/12, direct
+IP-CIDR, 127.0.0.0/8, direct
+IP-CIDR, 100.64.0.0/10, direct
+IP-CIDR, 224.0.0.0/4, direct
+IP6-CIDR, fe80::/10, direct
+IP-CIDR, 203.107.1.1/24, reject
+GEOIP, cn, direct
