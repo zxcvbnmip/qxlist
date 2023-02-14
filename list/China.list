@@ -77,3 +77,6 @@ DOMAIN-SUFFIX,linovelib.com
 
 # Just for Quantumult X, move GEOIP,CN to the bottom (local filter at the top by default)
 GEOIP,CN,no-resolve
+
+# > quantumultx收据
+DOMAIN-SUFFIX,quantumult.app
