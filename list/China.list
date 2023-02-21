@@ -73,7 +73,6 @@ DOMAIN-SUFFIX,weibo.cn
 DOMAIN-SUFFIX,weibocdn.com
 DOMAIN-KEYWORD,biligame
 DOMAIN-KEYWORD,weixin
-DOMAIN-SUFFIX,linovelib.com
 
 # Just for Quantumult X, move GEOIP,CN to the bottom (local filter at the top by default)
 GEOIP,CN,no-resolve
