@@ -9,7 +9,7 @@ DOMAIN-SUFFIX,cdnrlyun.top
 IP-CIDR,8.216.44.30/32
 # > NIKKE
 DOMAIN-KEYWORD,NIKKE
-DOMAIN-SUFFIX,nikke-me.com
+DOMAIN-SUFFIX,nikke-kr.com
 DOMAIN-SUFFIX,intlgame.com
 DOMAIN-SUFFIX,iegcom.com
 IP-CIDR,43.152.114.11/32,no-resolve
