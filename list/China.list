@@ -83,3 +83,7 @@ GEOIP,CN,no-resolve
 
 # > quantumultx收据
 DOMAIN-SUFFIX,quantumult.app
+
+# > 其他
+DOMAIN-SUFFIX,library.ac.cn
+DOMAIN-SUFFIX,hub.yzuu.cf
