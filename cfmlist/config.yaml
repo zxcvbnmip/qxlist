@@ -1,0 +1,176 @@
+proxies:
+#自己单独的节点/自建节点可以往这里写一下，参见教程里面的格式
+proxy-providers:
+  一元:
+    type: http
+    url: ""
+    path: ./proxy_providers/一元.yaml
+    interval: 10800
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 900
+  魔戒:
+    type: http
+    url: ""
+    path: ./proxy_providers/魔戒.yaml
+    interval: 10800
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 900
+  养猪场:
+    type: http
+    url: ""
+    path: ./proxy_providers/养猪场.yaml
+    interval: 10800
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 900
+  果酱:
+    type: http
+    url: ""
+    path: ./proxy_providers/果酱.yaml
+    interval: 10800
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 900
+  萌新:
+    type: http
+    url: ""
+    path: ./proxy_providers/萌新.yaml
+    interval: 10800
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 900
+  自建:
+    type: file
+    path: ./proxy_providers/自建.yaml
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300
+#-------------------------------------------------------------------
+#data/clash/proxy-provider里面有白嫖节点可以使用，也欢迎提交更多白嫖节点
+#使用p核时，如果无法正常更新订阅，请打开proxy provider 里面的机场yaml配置文件查看
+#如果是乱码，需要自己在订阅链接结尾加上 &flag=clash  强制订阅服务器下发clash的配置文件
+# 魔戒 一元 养猪场为机场名，可以更换，要换必须全换，建议使用编辑器的查找功能避免遗漏
+proxy-groups:
+  - name: 机场
+    type: select
+    use:
+      - 一元
+      - 魔戒
+      - 养猪场
+      - 果酱
+      - 萌新
+      - 自建
+    proxies:
+      - Auto
+      - 一元
+      - 魔戒
+      - 养猪场
+      - 果酱
+      - 萌新
+      - 自建
+    filter: '^((?!(订阅|套餐|流量|机场|tg|官网|流量|特殊|地区|地区|和|浏览器|端口)).)*$'
+  - name: Auto
+    type: url-test 
+    use:
+      - 一元
+      - 魔戒
+      - 养猪场
+      - 果酱
+      - 萌新
+      - 自建
+    filter: '^((?!(订阅|套餐|流量|机场|tg|官网|流量|特殊|地区|地区|和|浏览器|端口)).)*$'
+  - name: 果酱
+    type: select
+    use:
+      - 果酱
+  - name: 一元
+    type: select
+    use:
+      - 一元
+  - name: 魔戒
+    type: select
+    use:
+      - 魔戒
+  - name: 养猪场
+    type: select
+    use:
+      - 养猪场
+  - name: 自建
+    type: select
+    use:
+      - 自建
+  - name: 萌新
+    type: select
+    use:
+      - 萌新
+  - name: exhentai
+    type: select
+    proxies: 
+      - DIRECT
+      - 机场
+    use: 
+      - 自建
+#meta的特性，如果你经常使用某个地区节点可以使用过滤器便于选择 美国节点 可以改为其他
+#但是要改就得全改，建议使用编辑器的替换功能防止遗漏。过滤器内容用 | 分割，支持通配符
+  - name: 负载均衡
+    type: load-balance
+    use:
+      - 一元
+      - 萌新
+      - 养猪场
+      - 果酱
+      - 魔戒
+    url: 'http://www.gstatic.com/generate_204'
+    interval: 900
+    strategy: consistent-hashing
+  - name: 墙内网址
+    type: select
+    proxies:
+      - DIRECT
+      - 机场
+  - name: 其他
+    type: select
+    proxies:
+      - DIRECT
+      - 机场
+      - 墙内网址
+#用户自定义规则，文件在data/clash/rule-provider/
+#需要的自己写入，格式参照备用里面的clash官方文档
+#有一些规则已经预装但是未使用 比如fcm相关规则
+rule-providers:
+  userDirect:
+    type: file
+    behavior: classical
+    path: ./rule_providers/userDirect.yaml
+  userProxy:
+    type: file
+    behavior: classical
+    path: ./rule_providers/userProxy.yaml
+  Local:
+    type: file
+    behavior: classical
+    path: ./rule_providers/Local.yaml
+  exhentai:
+    type: file
+    behavior: classical
+    path: ./rule_providers/ex.yaml
+rules:
+  - RULE-SET,Local,DIRECT
+  - RULE-SET,userProxy,机场
+  - RULE-SET,userDirect,墙内网址
+  - RULE-SET,exhentai,exhentai
+  - GEOSITE,category-ads-all,REJECT
+  - GEOSITE,geolocation-cn,墙内网址
+  - GEOSITE,geolocation-!cn,机场
+  - GEOIP,private,DIRECT
+  - GEOIP,CN,墙内网址
+  - GEOIP,!CN,机场
+  - MATCH,其他
