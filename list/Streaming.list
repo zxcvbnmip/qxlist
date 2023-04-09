@@ -334,7 +334,7 @@ DOMAIN-SUFFIX,hanime1.me
 # > hanime.tv
 DOMAIN-SUFFIX,hanime.tv
 # > emby
-DOMAIN-KEYWORD,emby
+# DOMAIN-KEYWORD,emby
 # > odysee
 DOMAIN-SUFFIX,odysee.com
 DOMAIN-SUFFIX,lbry.com
