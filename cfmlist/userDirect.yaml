@@ -416,3 +416,6 @@ payload:
   - DOMAIN-KEYWORD,microsoft
   - DOMAIN-KEYWORD,onedrive
   - DOMAIN-KEYWORD,skydrive
+# > emby ---------------------
+  - DOMAIN-KEYWORD,emby
+  - DOMAIN-SUFFIX,masakaf.org
