@@ -19,3 +19,6 @@ DOMAIN-SUFFIX,api.mgtv.com
 DOMAIN,mobileso.bz.mgtv.com
 # > 哔哩轻小说
 DOMAIN-SUFFIX,linovelib.com
+# > Emby
+DOMAIN-SUFFIX,masakaf.org
+DOMAIN-KEYWORD,Emby
