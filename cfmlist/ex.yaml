@@ -1,7 +1,7 @@
 payload:
  - DOMAIN-SUFFIX,e-hentai.org 
  - DOMAIN-SUFFIX,exhentai.org 
- #DOMAIN-SUFFIX,hath.network 
+# - DOMAIN-SUFFIX,hath.network 
  - IP-CIDR,104.20.134.21/32,no-resolve 
  - IP-CIDR,104.20.135.21/32,no-resolve 
  - IP-CIDR,172.67.0.127/32,no-resolve 
