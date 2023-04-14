@@ -1,11 +1,11 @@
-DOMAIN-SUFFIX,ksxb.ltd
-DOMAIN-SUFFIX,bdxiguaimg.com
-DOMAIN-SUFFIX,bcebos.com
-DOMAIN-SUFFIX,tspweb.com
-DOMAIN-SUFFIX,umeng.com
-DOMAIN-SUFFIX,mixpanel.com
-DOMAIN-SUFFIX, ooegpip.cn
-DOMAIN-SUFFIX, avgsco.xyz
-DOMAIN-SUFFIX, 965373.com
-DOMAIN-SUFFIX, fioem.cyou
-DOMAIN-SUFFIX, nrkgalk.cn
+DOMAIN-SUFFIX,ksxb.ltd,reject
+DOMAIN-SUFFIX,bdxiguaimg.com,reject
+DOMAIN-SUFFIX,bcebos.com,reject
+DOMAIN-SUFFIX,tspweb.com,reject
+DOMAIN-SUFFIX,umeng.com,reject
+DOMAIN-SUFFIX,mixpanel.com,reject
+DOMAIN-SUFFIX, ooegpip.cn,reject
+DOMAIN-SUFFIX, avgsco.xyz,reject
+DOMAIN-SUFFIX, 965373.com,reject
+DOMAIN-SUFFIX, fioem.cyou,reject
+DOMAIN-SUFFIX, nrkgalk.cn,reject
