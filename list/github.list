@@ -26,3 +26,4 @@ DOMAIN-SUFFIX,rawgit.com,GitHub
 DOMAIN-SUFFIX,rawgithub.com,GitHub
 DOMAIN-SUFFIX,thegithubshop.com,GitHub
 DOMAIN-KEYWORD,github,GitHub
+IP-CIDR,20.205.243.166/32,direct
