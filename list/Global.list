@@ -337,10 +337,10 @@ DOMAIN-SUFFIX,whatsapp.net
 DOMAIN-KEYWORD,.facebook.
 # > Microsoft
 DOMAIN-SUFFIX,aka.ms
-DOMAIN-SUFFIX,github.blog
-DOMAIN-SUFFIX,github.com
-DOMAIN-SUFFIX,github.io
-DOMAIN-SUFFIX,githubusercontent.com
+# DOMAIN-SUFFIX,github.blog
+# DOMAIN-SUFFIX,github.com
+# DOMAIN-SUFFIX,github.io
+# DOMAIN-SUFFIX,githubusercontent.com
 DOMAIN-SUFFIX,onedrive.live.com
 DOMAIN-SUFFIX,streaming.mediaservices.windows.net
 DOMAIN,assets1.xboxlive.com
