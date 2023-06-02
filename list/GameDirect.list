@@ -7,5 +7,6 @@ DOMAIN-SUFFIX,steamcontent.com,direct
 DOMAIN-SUFFIX,steamstatic.com,direct
 DOMAIN-SUFFIX,steamcdn-a.akamaihd.net,direct
 DOMAIN-SUFFIX,steamstat.us,direct
+DOMAIN-SUFFIX,steamserver.net
 # > epic
 DOMAIN-SUFFIX,epicgames.com
