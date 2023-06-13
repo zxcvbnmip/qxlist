@@ -336,6 +336,8 @@ DOMAIN-SUFFIX,hanime.tv
 # > emby
 # DOMAIN-KEYWORD,emby
 # DOMAIN,porn.hentaihome.org
+DOMAIN-SUFFIX,misakaf.org
+DOMAIN-KEYWORD,Emby
 # > odysee
 DOMAIN-SUFFIX,odysee.com
 DOMAIN-SUFFIX,lbry.com
