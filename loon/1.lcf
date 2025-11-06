@@ -1,0 +1,121 @@
+#default config
+#Date: 2022.06.01
+#Author: Loon
+
+[General]
+ipv6-vif = auto
+doq-server = quic://13b4ac.dns.nextdns.io
+doh-server = https://dns.ipv4dns.com/dns-query
+doh3-server = https://dns.ipv4dns.com/dns-query
+disconnect-on-policy-change = true
+ip-mode = dual
+skip-proxy = 192.168.0.0/16,10.0.0.0/8,172.16.0.0/12,localhost,*.local,e.crashlynatics.com
+bypass-tun = 10.0.0.0/8,100.64.0.0/10,127.0.0.0/8,169.254.0.0/16,172.16.0.0/12,192.0.0.0/24,192.0.2.0/24,192.88.99.0/24,192.168.0.0/16,198.51.100.0/24,203.0.113.0/24,224.0.0.0/4,255.255.255.255/32
+dns-server = system,119.29.29.29,114.114.114.114,223.5.5.5
+allow-wifi-access = false
+wifi-access-http-port = 7222
+wifi-access-socks5-port = 7221
+proxy-test-url = http://bing.com/generate_204
+internet-test-url = http://wifi.vivo.com.cn/generate_204
+test-timeout = 3
+interface-mode = auto
+
+[Proxy]
+日本BuyVM-vless = VLESS,217.142.236.73,40619,"b7b9c18d-5cb1-47fc-9c58-801344347e87",transport=tcp,flow=xtls-rprx-vision,public-key="xQuHrEH8Mb9zJiWberMxiSSBBgj_KuaUFlcIhAOq33Q",short-id=149bc2d3,udp=true,block-quic=false,over-tls=true,sni=www.yahoo.com
+日本BuyVM-hy = Hysteria2,217.142.236.73,34563,"00226531",sni=www.bing.com,skip-cert-verify=true,udp=true,block-quic=false
+
+[Remote Proxy]
+congyu = https://excellent.congyusub.top/link/1c4ccd76f2168f4a?v2ray=1,udp=true,block-quic=false,fast-open=default,vmess-aead=true,skip-cert-verify=true,enabled=true,flexible-sni=true
+peiqian = https://dash.pqjc.site/api/v1/client/subscribe?token=59e0a211a36239af13530dfb1da6f086,udp=true,block-quic=false,fast-open=default,vmess-aead=true,skip-cert-verify=true,enabled=true,flexible-sni=false
+top = https://dash.djjc.cfd/api/v1/client/subscribe?token=dafad1181ebfcc83ba7a50a2de798474,udp=true,block-quic=false,fast-open=default,vmess-aead=true,skip-cert-verify=true,enabled=true,flexible-sni=true
+yiyuan = https://sub1.smallstrawberry.com/api/v1/client/subscribe?token=ae0daeaa1cea45138a1c891cb75d2fcc,udp=true,block-quic=false,fast-open=default,vmess-aead=true,skip-cert-verify=true,enabled=true,flexible-sni=true
+
+[Proxy Chain]
+
+[Proxy Group]
+Available = select,日本BuyVM-vless,丛雨,一元,顶级,赔钱,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Available.png
+YouTube = select,Available,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/YouTube.png
+Twitter = select,日本BuyVM-vless,一元,顶级,赔钱,丛雨,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Twitter.png
+Telegram = select,Available,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram_X.png
+Spotify = select,JP_Filter,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Spotify.png
+Ehentai = select,日本BuyVM-vless,img-url = https://exhentai.org/favicon.ico
+JP = select,JP_Filter,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png
+Mail = select,日本BuyVM-vless,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Mail.png
+丛雨 = select,chong
+一元 = select,yiyuan
+顶级 = select,top
+赔钱 = select,peiqian
+
+[Remote Filter]
+chong = NameRegex,congyu, FilterKey = "^(?!.*(客户端|机场)).*"
+yiyuan = NameRegex,yiyuan, FilterKey = "^(?!.*(客户端|机场)).*"
+top = NameRegex,top, FilterKey = "^(?!.*(客户端|机场)).*"
+peiqian = NameRegex,peiqian, FilterKey = "^(?!.*(客户端|机场)).*"
+节点过滤器 = NameRegex,peiqian,top,yiyuan,congyu, FilterKey = "^(?!.*(客户端|机场)).*"
+ALL_Filter = NameRegex, FilterKey = ".*"
+HK_Filter = NameRegex, FilterKey = "(?i)(港|HK|Hong)"
+TW_Filter = NameRegex, FilterKey = "(?i)(台|TW|Tai)"
+JP_Filter = NameRegex, FilterKey = "(?i)(日本|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Japan)"
+KR_Filter = NameRegex, FilterKey = "(?i)(KR|Korea|KOR|首尔|韩|韓)"
+US_Filter = NameRegex, FilterKey = "(?i)(美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States)"
+SG_Filter = NameRegex, FilterKey = "(?i)(新加坡|坡|狮城|SG|Singapore)"
+
+[Rule]
+GEOIP,cn,DIRECT
+DEST-PORT,22,日本BuyVM-vless
+#Type:DOMAIN-SUFFIX,DOMAIN,DOMAIN-KEYWORD,USER-AGENT,URL-REGEX,IP-CIDR
+#Strategy:DIRECT,PROXY,REJECT
+#Options:no-resolve(only for IP-CIDR,IP-CIDR2,GEOIP,IP-ASN)
+
+FINAL,Available
+
+[Remote Rule]
+https://rule.kelee.one/Loon/Spotify.lsr, policy=DIRECT, tag=Spotify.lsr, enabled=true
+https://rule.kelee.one/Loon/Mail.lsr, policy=DIRECT, tag=Mail.lsr, enabled=true
+https://rule.kelee.one/Loon/EHGallery.lsr, policy=Ehentai, tag=EHGallery.lsr, enabled=true
+https://rule.kelee.one/Loon/Twitter.lsr, policy=Twitter, tag=Twitter.lsr, enabled=true
+https://rule.kelee.one/Loon/China.lsr, policy=DIRECT, tag=China.lsr, enabled=true
+https://raw.githubusercontent.com/Loon0x00/LoonLiteRules/main/proxy/YouTube.list, policy=Available, tag=YouTube, enabled=true
+https://raw.githubusercontent.com/Loon0x00/LoonLiteRules/main/proxy/Telegram.list, policy=Available, tag=Telegram, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Proxy/Proxy.list, policy=Available, tag=Global, enabled=true
+https://raw.githubusercontent.com/Loon0x00/LoonLiteRules/main/direct/cn.list, policy=DIRECT, tag=GEOIP_CN, enabled=true
+
+[Rewrite]
+
+[Script]
+
+[Plugin]
+https://kelee.one/Tool/Loon/Lpx/XiaoHeiHe_remove_ads.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/WexinMiniPrograms_Remove_ads.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/Weixin_external_links_unlock.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/Weixin_Official_Accounts_remove_ads.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/Weibo_intl_remove_ads.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/Taobao_remove_ads.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/PinDuoDuo_remove_ads.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/QuickSearch.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/Remove_ads_by_keli.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/JD_remove_ads.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/Node_detection_tool.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/Amap_remove_ads.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/NodeLinkCheck.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/BiliComic_remove_ads.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/Bilibili_remove_ads.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/BaiduNetDisk_remove_ads.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/YouTubeSubtitlesTranslation.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/YouTube_remove_ads.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/Sub-Store.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/Spotify_lyrics_translation.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/Spotify_remove_ads.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/Script-Hub.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/QQMusic_remove_ads.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/QQ_Redirect.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/Google.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/Prevent_DNS_Leaks.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/AppleWeatherEnhancer.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/BlockAdvertisers.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/Block_HTTPDNS.lpx, enabled=true
+[Mitm]
+hostname = - dns.ipv4dns.com
+ca-p12 = MIIJ/wIBAzCCCcUGCSqGSIb3DQEHAaCCCbYEggmyMIIJrjCCBCIGCSqGSIb3DQEHBqCCBBMwggQPAgEAMIIECAYJKoZIhvcNAQcBMFcGCSqGSIb3DQEFDTBKMCkGCSqGSIb3DQEFDDAcBAjGiPMZuw1lxwICCAAwDAYIKoZIhvcNAgkFADAdBglghkgBZQMEASoEEBOZ50p8WGjb/ujzvosPvgqAggOgiSRgxbKSd0aaHwlQewWNtK7WxKvLHUXPcsbwHExz+X/UoVB8LrtCcnE6LFnOU3XC4wJPHR2U/iP0kyD53oaklAeXYLrt/vZz0G5OIJ9cuFiCU1sQfhJHMCgepOhzxIHpzdTwajIyALNs2oyROhZzOApzr+VBjN6gjFUrBpXWlbUZmm/StZeVFEVgDsLJfMSSJHsW35DehuFrhYMKc/KT/VO1SI2uD6eIWbC7MPtJIOZIKWYpvqsMfuSBbkQwJ3wh8z9R4NpU5Ffuo2wn+onEGR7rWnjUEwStcPEISY4hlGgvBs7rM8OGzR3th1ejeIM4v+mOIfklXasFd7Rhs9NOwWwgtUCFaRAcrvAt5D3C4lPvP39lauiGILLNNcrKyK8UZC2guCfaYoRTyNBXOsLxCxXm6vdY0Mq5sa0Sw61rrwKGSTomXRjBW1lfDNBNZsJJUqqsmNdmFDsHbzmfBkGnjmidzhYMtHq+NJHUqZSMkI8FqC8XPxwjNjCuqfy4zTiFqLCKTYZA33XLvxg16PmCGfK8hwxNfX8ZVDCnXNV9L2G3uFAhXKztMOteXtCx62gjw3MDmS/vGq7Gryv9JQdWZ+qBj0UyS8Fq1OlXvL9jgTYAd+fpAZD/I4boyQ12rQjkHShrR3h9YWSdRQt83DUdgOhQr7aE55nDdg89aTLVdWB0ZOA+hfxsEFpMWVCUHtM/GcWRItKEnXOuosdGsGHRkPmtI5E6ZmRy8F8WMHGEROGTj0YCzjfqf3SLRYUsxIg9/axDA4RnLyUcW/Pei0qcTan4Yyxj/F5JbCZfPyGOqn8Y7cDR3nSLqiRLA7B0J53e6IqChXio53GtfKc/q3UzfhAQ2s/XeQTmO2H9sNNL3GkOStxNeMu9l72hDXctlx5SPBB/mDxD3jpUtukfKdMlR0RLIFGkm3wFHlKrHN/xh176ncJx0dw2OGrUE+5jp8jB6lXGwVL8Hotqdt9pgrcdnF6m5wKpmjav16AOYpSmBBhVluaZ6+PvEX4JkNeBIn1dojTmiIrb3L8hm1/kc/j3u8G7L+I2DhENoWxUsde/w0co0XpCBgPuIGm/CV3A1cMLgHvtLPlzCAPMfssqUyc9Pyz07s9DCI5BzrhSZXwaC9CoBB6UAQe5wyIVWkOe2GcvPj42yPN/RdAi9DWqRBTjNqKOYidZhOvcUKd/ZrDV4xjnNABV3i0l5iXHYNjt2HBgPY+kdrH+KyplRFH4ti2SczCCBYQGCSqGSIb3DQEHAaCCBXUEggVxMIIFbTCCBWkGCyqGSIb3DQEMCgECoIIFMTCCBS0wVwYJKoZIhvcNAQUNMEowKQYJKoZIhvcNAQUMMBwECAmHyzpyHdWIAgIIADAMBggqhkiG9w0CCQUAMB0GCWCGSAFlAwQBKgQQM0pXH338O6G8NIO1Lbu9TQSCBNARN25H/G81AZaWjyVYLJJ3xzUrgkFixxiBs4uplLcAKCzx48EXEIm9GCSrUgHGt8BiaNZk9T9+pm6tIJfOMfHT93CxOeFfxzqiATVXss8VpaeLSQNIZXHMYFJBvHEpGzP+hQCXMznERTaMPGlZGiuZsni/Pl/Oj+Hao2SKk61BEmuVDnBnHONunSO31BXFgg1ROQe1lhlBh7JsMMqj/fspnHxArxj8iakIBHOi/O/cvriePEqmJCqR0+Aiavzmgv0LnstqjtHAVSXJEg3eW1l+FCvdJsjAffBha+Ay+6eCt5f966GQXDi9ldqbz94l1PPcxVVtdQ7BCK5TXAPFJiSRudEfEyFJQlUzbK7dyggDd+7/p3VMSP4RJk5x0qJBeUZ9mP8sK2JRMxRvOpIqWN4c5u2M3edvV9NJzxoM3TjrziQsiBIj2IFfGJ4aPr3OmJsErUPn1XKbU5QF8Sj1SlMM2PBsATfpe3HV4RSKjbuBAyBvhPq2fEa1EP/iEFRdIEiGX7RWORcJbT/J+Qv1tKxsTg48MJulPXIYWyiZGeKGEY3nrQBC995QhTYvxGZtPiqHn/MReSybIaMsDrLRR8zmFi+f+n0kX6nmVmFK5/Kps5fT+0j5F8oSq9SbBCnNHG2S2JNQ0RjqRv6O4e7tMg6TrrPpiHGUBXXPBBpCIFlygKqrVRu12WWP9xqq/ZcwO9le3DIdrXd2AOJHLw5ON0C1UxjCcLAy4z8ICBzEyljkAUwMJ/Pi3DJ6/R9dHipUG7QapzAfPMW3FeELHGoDqbI5wSk3yZss8AuAAMWTlL+oZjswpARidLENEyYhXGMDeLAgpLkSIIGtcUouJYCJxr1uWyeV59ni5uaaI4jKiWHTITzD4dkKwe/8OJPOIvD3nUWnbM2PxT7KsDOQKzgpgXUwxmo3QTg23J4AqsC5tFYsuUEQXi4H1IOaIs3xFIEGNLwygq1DdHAnhbER9X3uG7TF9ubiIPcKAeJqkXSBHfmnOc5xWK2VhStbOYkqnx73DvA6aeBggsi5HauBglSyEWk4mq1k+RNpObaxwioJy/bIBUzNlGpyODOoScp8jg5fozJ4f1Jne3Il0jbimgfAni6JUDxfaKYJ24WiNlrszutuy7jKxxmihhH/7liDKaan+X4Axy5ir/96RcfFJvTV8cjwCMJFWbvKloyAFFkZsvVF8xSW8RLrbgfYG6Jb5svU86kE/U0QLi+PIOm+IhqKUzndH7XOpB9s4C0s+TLK5YDEyA85f5AHr30MDbidA2p6488mqGG7IerYQbyTv3f8IaIGmIDpkik8pcYUVfjCvFLJFVs8ooFTa95394H7EfIXlBnp9GkCyYns8R0bCYi0YiVjDzkZhUHeM3dloTadZR9ytb/QKdLaRekX4U6+sp++olZmszkg02+CIV8rxiNO+6kEdO3rRYqhLMIFzc90Rbq/SFOUUhFiA7Dj5MYWEpVw32igvBFOAbFb22CiGiFON3Bi+/yJJZi0/gR8kzjoc2ljEMUTFawNST0TeEQ1BkM13n2vKIIFf828y/+G2SRxNm73H5PI42uEwS0CQYK36kj4QwmDegyxugZx3H8kRvgHjzrWZmAcgh9Vvi/luZWZw2DKFiB5tOi0s2vELyCrHUL2mDElMCMGCSqGSIb3DQEJFTEWBBTQhkpR1H12fd7Gr+xSeeSjFHZhMTAxMCEwCQYFKw4DAhoFAAQUCOa6ubImYxlYPQuJLrNjgQWtiOMECIDkGLYoWeBqAgIIAA==
+ca-passphrase = Q3A61951
+skip-server-cert-verify = false
